@@ -15,7 +15,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<MainListPage />} />
-        <Route path='/moviedetails' element={<DetailsPage />} />
+        <Route path='/moviedetails/:movieId' element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>
