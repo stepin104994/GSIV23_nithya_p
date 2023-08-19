@@ -2,7 +2,13 @@ import { SET_MOVIE_DETAILS, SET_MOVIE_DETAILS_ERROR, SET_MOVIE_DETAILS_LOADER } 
 
 
 export const initialState = {
-    movieDetails: {},
+    movieDetails: {
+        id: 1,
+        poster_path: '',
+        title: '',
+        overview: '',
+        vote_average:10
+    },
     loader: false,
     error: false,
 }
@@ -14,7 +20,7 @@ export default (state = initialState, action: any) => {
         case SET_MOVIE_DETAILS_LOADER:
             return { ...state, loader: action.value }
         case SET_MOVIE_DETAILS_ERROR:
-            return { ...state, error: action.value }       
+            return { ...state, error: action.value }
         default: return state;
     }
 }
