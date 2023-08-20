@@ -1,7 +1,7 @@
 import noResults from  "../assets/no-result.gif";
 import "./shared.scss";
 
-const Loader =()=>{
+const NoResults =()=>{
     return(
         <div className="loader__alignment">
            <img src={noResults} alt='no data' />
@@ -9,4 +9,4 @@ const Loader =()=>{
     )
 }
 
-export default Loader;
+export default NoResults;

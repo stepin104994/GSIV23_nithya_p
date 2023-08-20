@@ -3,29 +3,33 @@ import "./MainListPage.scss";
 import MovieCard from './MovieCard';
 import Pagination from './Pagination';
 import { connect, useDispatch } from 'react-redux';
-import { GET_TRENDING_MOVIES } from './MainListPage.actions';
+import { GET_TRENDING_MOVIES, SEARCH_TRENDING_MOVIES } from './MainListPage.actions';
 import { ICardData } from './MainListPage.interface';
 import Loader from '../../shared/Loader';
 import Error from '../../shared/Error';
+import NoResults from '../../shared/NoResults';
+import Header from '../../shared/Header';
 
 
-const MainListPage = ({ activePage, moviesList, loader,error }: any) => {
+const MainListPage = ({ activePage, moviesList, loader, error, searchValue }: any) => {
     const dispatch = useDispatch();
     const [cardsData, setCardsData] = useState<ICardData[]>([]);
 
     useEffect(() => {
-        //API call
-        dispatch({ type: GET_TRENDING_MOVIES, value: activePage });
-    }, [activePage])
+        console.log(searchValue,"---")
+        searchValue ?
+            dispatch({ type: SEARCH_TRENDING_MOVIES, payload: { query: searchValue, page: activePage } })
+            :dispatch({ type: GET_TRENDING_MOVIES, value: activePage });
+    }, [activePage,searchValue])
 
     useEffect(() => {
         setCardsData(moviesList);
-    }, [moviesList, loader,error])
+    }, [moviesList, loader, error])
 
     return (
         <>
-            {loader ? <Loader /> : error?<Error/>:
-
+            <Header search={true}/>
+            {loader ? <Loader /> : error ? <Error /> : (cardsData.length === 0) ? <NoResults /> :
                 <div className='cards__container'>
                     {cardsData.map((details, index) =>
                         <div key={index}>
@@ -47,6 +51,7 @@ const mapStateToProps = (state: any) => ({
     moviesList: state.moviesListReducer.moviesList,
     activePage: state.moviesListReducer.activePage,
     loader: state.moviesListReducer.loader,
-    error: state.moviesListReducer.error
+    error: state.moviesListReducer.error,
+    searchValue: state.moviesListReducer.searchValue
 })
 export default connect(mapStateToProps)(MainListPage);

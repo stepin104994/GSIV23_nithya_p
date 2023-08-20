@@ -1,4 +1,4 @@
-import { SET_ACTIVE_PAGE, SET_PAGE_TOTAL, SET_TRENDING_MOVIES, SET_TRENDING_MOVIES_ERROR, SET_TRENDING_MOVIES_LOADER } from "./MainListPage.actions"
+import { SET_ACTIVE_PAGE, SET_PAGE_TOTAL,  SET_SEARCH_VALUE, SET_TRENDING_MOVIES, SET_TRENDING_MOVIES_ERROR, SET_TRENDING_MOVIES_LOADER } from "./MainListPage.actions"
 
 export const initialState = {
     moviesList: [{}],
@@ -6,6 +6,7 @@ export const initialState = {
     activePage: 1,
     loader: false,
     error: false,
+    searchValue:''
 }
 
 export default (state = initialState, action: any) => {
@@ -20,6 +21,8 @@ export default (state = initialState, action: any) => {
             return { ...state, totalPages: action.value }
         case SET_ACTIVE_PAGE:
             return { ...state, activePage: action.value }
+        case SET_SEARCH_VALUE:
+            return { ...state,searchValue:action.value }
         default: return state;
     }
 }

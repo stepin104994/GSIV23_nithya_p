@@ -11,3 +11,28 @@
     position: absolute;
     transform: translate(-50%,-50%);
 }
+.header__container{
+    height: 30px;
+    padding: 10px;
+    box-shadow: 1px 0px 14px #888888;
+    position: sticky;
+    top: 0;
+    background: white;
+}
+input{
+    height: 20px;
+    width: 30%;
+    border: 1px solid #b5aaaa;
+    border-radius: 3px;
+    background: #dfdfdf;
+}
+input:focus-visible{
+    outline: none;
+}
+.home__icon{
+    float: right;
+    display: flex;
+}
+.details__header{
+    font-weight: 500;
+}
