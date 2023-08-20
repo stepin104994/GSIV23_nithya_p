@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename={window.location.pathname || ''}>
       <Routes>
-        <Route path='/' element={<MainListPage />} />
+        <Route  path='/'  element={<MainListPage />} />
         <Route path='/moviedetails/:movieId' element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>

@@ -29,12 +29,12 @@ const DetailsPage = ({ movieDetails, loader, error }: any) => {
             <Header search={false} />
             {loader ?
                 <Loader /> : error ? <Error /> :
-                    <div className="movie__details__container">
+                    details && <div className="movie__details__container">
                         <img className="details__image" loading="lazy" height={200} width={140} src={imagePath(details?.poster_path)} alt="movie poster" />
                         <div className="movie__details">
-                           <div className="container"> <p className="movie__title">{details.title}</p><p>⭐ {details.vote_average?.toFixed(2).replace(/\.00$/, '')}/10</p></div>
-                            <p className="info">{moment(details.release_date).format("YYYY")}|{moment.utc(moment.duration(details.runtime,'minutes').asMilliseconds()).format("HH:mm")}|{details.production_companies[0].name}</p>
-                            <p className="movie__description">Description:{details.overview}</p>
+                           <div className="container"> <p className="movie__title">{details?.title}</p><p>⭐ {details?.vote_average?.toFixed(2).replace(/\.00$/, '')}/10</p></div>
+                            <p className="info">{moment(details?.release_date).format("YYYY")}|{moment.utc(moment.duration(details?.runtime,'minutes').asMilliseconds()).format("HH:mm")}</p>
+                            <p className="movie__description">Description:{details?.overview}</p>
                         </div>
                     </div>}
         </>
