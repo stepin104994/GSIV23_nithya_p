@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/GSIV23_nithya_p/static/css/main.269f0111.css",
+    "main.js": "/GSIV23_nithya_p/static/js/main.84b6aa00.js",
+    "static/media/no-result.gif": "/GSIV23_nithya_p/static/media/no-result.6427da74972e09309286.gif",
+    "static/media/404_animation.gif": "/GSIV23_nithya_p/static/media/404_animation.922c78397447bcef7e43.gif",
+    "static/media/Loading_icon.gif": "/GSIV23_nithya_p/static/media/Loading_icon.1a32f552ee5280e2aef9.gif",
+    "index.html": "/GSIV23_nithya_p/index.html",
+    "main.269f0111.css.map": "/GSIV23_nithya_p/static/css/main.269f0111.css.map",
+    "main.84b6aa00.js.map": "/GSIV23_nithya_p/static/js/main.84b6aa00.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.269f0111.css",
+    "static/js/main.84b6aa00.js"
+  ]
+}
