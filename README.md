@@ -1,7 +1,7 @@
 # GSIV23 code Challenge
 
 ## Instructions to clone and run the application ##
-#### Clone the code from 'https://github.com/stepin104994/GSIV23_nithya_p.git' ####
+* Clone the code from 'https://github.com/stepin104994/GSIV23_nithya_p.git' 
 #### Open with any text editor ####
 #### In terminal $cd moviesapp ####
 #### Do 'npm i' ####
